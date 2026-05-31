@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="kakaspay — ICICI Bank IMPS/NEFT/RTGS Payment Owner Portal"/>
+<meta name="robots" content="noindex,nofollow"/>
+<title>kakaspay</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230f172a'/%3E%3Crect x='7' y='7' width='3' height='18' fill='%23F05A28'/%3E%3Cpolygon points='10,16 20,7 25,7 15,16' fill='%23F05A28'/%3E%3Cpolygon points='10,16 20,25 25,25 15,16' fill='%23F05A28'/%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="app">
+
+<!-- LOGIN -->
+<div id="scr-login" class="screen active">
+  <div class="login-card">
+    <div class="login-brand">
+      <div class="lb-top">
+        <img src="data:image/png;base64,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" alt="kakaspay" class="lb-logo"/>
+        <div class="lb-rule"></div>
+        <p class="lb-tag">IMPS · NEFT · RTGS<br/>Payment Owner Portal</p>
+        <p class="lb-desc">Restricted to designated application owners. All sessions encrypted &amp; audited per RBI guidelines.</p>
+        <div class="lb-img">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=60&auto=format&fit=crop" alt="" loading="lazy"/>
+          <span class="lb-img-label">ICICI Bank · Corporate Payments</span>
+        </div>
+      </div>
+      <div class="lb-bottom">
+        <div class="lb-sec"><i class="ti ti-shield-lock"></i> OAuth 2.0 · TLS 1.3 · RBI Compliant</div>
+        <div class="lb-tags">
+          <span class="lb-chip active">ICICI Bank</span>
+          <span class="lb-chip">IMPS 24x7</span>
+          <span class="lb-chip">NEFT</span>
+          <span class="lb-chip">RTGS</span>
+        </div>
+      </div>
+    </div>
+    <div class="login-form">
+      <div class="l-badge"><i class="ti ti-lock" style="font-size:10px"></i> Secure Sign-In</div>
+      <h1 class="l-title">Welcome back</h1>
+      <p class="l-sub">Sign in to kakaspay owner account</p>
+      <div class="fg">
+        <label class="fl" for="lid">Owner ID / Email</label>
+        <input class="fi" id="lid" type="email" placeholder="owner@kakaspay.com" autocomplete="username"/>
+      </div>
+      <div class="fg">
+        <label class="fl" for="lpw">Password <a href="#" onclick="return false" style="float:right;text-transform:none;letter-spacing:0;font-size:11px">Forgot?</a></label>
+        <div class="fwrap">
+          <input class="fi" id="lpw" type="password" placeholder="••••••••••" autocomplete="current-password" style="padding-right:42px"/>
+          <button class="feye" type="button" onclick="togglePw()" aria-label="Toggle password"><i class="ti ti-eye" id="pw-eye"></i></button>
+        </div>
+      </div>
+      <label class="fcheck"><input type="checkbox"/> Keep me signed in</label>
+      <p class="ferr" id="ferr"><i class="ti ti-alert-triangle" style="font-size:11px;vertical-align:-1px"></i> Invalid credentials.</p>
+      <button class="btn-main" onclick="doLogin()">
+        <span id="ltxt">Authorize with OAuth</span>
+        <span class="lspin" id="lspin"></span>
+        <i class="ti ti-arrow-right" id="licon"></i>
+      </button>
+      <div class="sso-sep">or continue with</div>
+      <button class="btn-sso" type="button">
+        <svg width="16" height="16" viewBox="0 0 21 21" aria-hidden="true"><rect x="1" y="1" width="9" height="9" fill="#F25022"/><rect x="11" y="1" width="9" height="9" fill="#7FBA00"/><rect x="1" y="11" width="9" height="9" fill="#00A4EF"/><rect x="11" y="11" width="9" height="9" fill="#FFB900"/></svg>
+        Microsoft SSO
+      </button>
+      <button class="btn-sso" type="button">
+        <svg width="16" height="16" viewBox="0 0 48 48" aria-hidden="true"><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.4c-.5 2.9-2.2 5.3-4.7 6.9v5.7h7.6c4.4-4.1 7-10.2 7-16.6z"/><path fill="#34A853" d="M24 47c6.5 0 11.9-2.1 15.9-5.8l-7.6-5.7c-2.2 1.5-5 2.3-8.3 2.3-6.3 0-11.7-4.3-13.6-10H2.5v5.9C6.5 41.8 14.6 47 24 47z"/><path fill="#FBBC05" d="M10.4 28.8c-.5-1.5-.8-3.1-.8-4.8s.3-3.3.8-4.8v-5.9H2.5A23.9 23.9 0 000 24c0 3.8.9 7.5 2.5 10.7l7.9-5.9z"/><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.9 2.4 30.4 0 24 0 14.6 0 6.5 5.2 2.5 13.3l7.9 5.9C12.3 13.8 17.7 9.5 24 9.5z"/></svg>
+        Google Workspace
+      </button>
+      <p class="l-foot">By signing in you agree to kakaspay's Acceptable Use Policy &amp; Security Guidelines.</p>
+    </div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="scr-dash" class="screen">
+  <header class="topbar">
+    <div class="tb-l">
+      <img src="data:image/png;base64,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" alt="kakaspay" class="tb-logo"/>
+      <div class="tb-sep"></div>
+      <div class="tb-name">kakaspay <span>ICICI Bank Payment Portal</span></div>
+    </div>
+    <div class="tb-r">
+      <div class="tb-live"><span class="tb-dot"></span>API Live</div>
+      <div class="tb-av">2W</div>
+      <div><div class="tb-uname">2waytoceo</div><div class="tb-urole">Application Owner</div></div>
+      <button class="tb-btn" onclick="doLogout()" title="Sign out" aria-label="Sign out"><i class="ti ti-logout"></i></button>
+    </div>
+  </header>
+
+  <div class="dbody">
+    <nav class="sidebar" aria-label="Main navigation">
+      <div class="sb-sec">Overview</div>
+      <div class="ni on" id="ni-home"   onclick="nav('home')">   <i class="ti ti-home"></i>             Dashboard</div>
+
+      <div class="sb-sec">Fund Transfer</div>
+      <div class="ni" id="ni-imps"   onclick="nav('imps')">   <i class="ti ti-bolt"></i>             IMPS — Instant</div>
+      <div class="ni" id="ni-neft"   onclick="nav('neft')">   <i class="ti ti-calendar-time"></i>    NEFT — Batch</div>
+      <div class="ni" id="ni-rtgs"   onclick="nav('rtgs')">   <i class="ti ti-building-bank"></i>    RTGS — High Value</div>
+
+      <div class="sb-sec">Utilities</div>
+      <div class="ni" id="ni-status" onclick="nav('status')"> <i class="ti ti-refresh"></i>          Transaction Status</div>
+      <div class="ni" id="ni-acval"  onclick="nav('acval')">  <i class="ti ti-user-check"></i>       Account Validation</div>
+      <div class="ni" id="ni-vpa"    onclick="nav('vpa')">    <i class="ti ti-qrcode"></i>           Fetch VPA</div>
+      <div class="ni" id="ni-benef"  onclick="nav('benef')">  <i class="ti ti-users"></i>            Beneficiary Mgmt</div>
+
+      <div class="sb-sec">Logs</div>
+      <div class="ni" id="ni-history" onclick="nav('history')"><i class="ti ti-history"></i>         Request History <span class="ni-badge" id="hist-badge">0</span></div>
+    </nav>
+
+    <main class="content">
+
+      <!-- HOME -->
+      <section class="fscr on" id="fs-home">
+        <div class="welcome-card">
+          <div>
+            <h1 class="wg">Good day, 2waytoceo 👋</h1>
+            <p class="ws">kakaspay · Application Owner · ICICI Bank Corporate Payment Console · OAuth 2.0 active</p>
+          </div>
+          <div class="mgrid">
+            <div class="mc"><div class="mv"   id="m-calls">0</div><div class="ml">Total Calls</div></div>
+            <div class="mc"><div class="mv g" id="m-ok">0</div>   <div class="ml">Successful</div></div>
+            <div class="mc"><div class="mv r" id="m-err">0</div>  <div class="ml">Errors</div></div>
+            <div class="mc"><div class="mv b" id="m-avg">—</div>  <div class="ml">Avg Response</div></div>
+          </div>
+        </div>
+
+        <div class="sec-title"><i class="ti ti-bolt"></i> Fund Transfer APIs</div>
+        <div class="qgrid">
+          <div class="qt" onclick="nav('imps')">   <i class="ti ti-bolt"></i>           <b>IMPS</b><span>Instant · 24x7 · ₹5L max</span></div>
+          <div class="qt" onclick="nav('neft')">   <i class="ti ti-calendar-time"></i>  <b>NEFT</b><span>Batch · half-hourly</span></div>
+          <div class="qt" onclick="nav('rtgs')">   <i class="ti ti-building-bank"></i>  <b>RTGS</b><span>High value · ₹2L+</span></div>
+          <div class="qt" onclick="nav('status')"> <i class="ti ti-refresh"></i>         <b>Txn Status</b><span>UTR / Ref query</span></div>
+          <div class="qt" onclick="nav('acval')">  <i class="ti ti-user-check"></i>      <b>Acct Validate</b><span>Name match</span></div>
+          <div class="qt" onclick="nav('vpa')">    <i class="ti ti-qrcode"></i>          <b>Fetch VPA</b><span>UPI address lookup</span></div>
+          <div class="qt" onclick="nav('benef')">  <i class="ti ti-users"></i>           <b>Beneficiary</b><span>Add &amp; manage</span></div>
+        </div>
+
+        <div class="info-box">
+          <div class="info-box-title"><i class="ti ti-info-circle"></i> ICICI Bank API — How live calls work</div>
+          <p>Enter your <code>OAuth Bearer Token</code> and <code>Client ID</code> in any module's Params tab then click Send Request to fire a live call to <code>apigw.icicibank.com</code>.</p>
+          <p style="margin-top:8px">No token → sandbox mock (safe testing). Valid token → real transaction. CORS is handled when deployed on GitHub Pages.</p>
+        </div>
+      </section>
+
+      <!-- IMPS -->
+      <section class="fscr" id="fs-imps">
+        <div class="ph"><h2 class="pt">IMPS — Immediate Payment Service</h2><p class="ps">POST · Instant 24x7 fund transfer · Up to ₹5 lakh per transaction</p></div>
+        <div class="split" id="tg-imps"></div>
+      </section>
+
+      <!-- NEFT -->
+      <section class="fscr" id="fs-neft">
+        <div class="ph"><h2 class="pt">NEFT — National Electronic Funds Transfer</h2><p class="ps">POST · Batch-based · Settled in half-hourly cycles during banking hours</p></div>
+        <div class="split" id="tg-neft"></div>
+      </section>
+
+      <!-- RTGS -->
+      <section class="fscr" id="fs-rtgs">
+        <div class="ph"><h2 class="pt">RTGS — Real Time Gross Settlement</h2><p class="ps">POST · High-value transfers ₹2 lakh and above · Real-time settlement during banking hours</p></div>
+        <div class="split" id="tg-rtgs"></div>
+      </section>
+
+      <!-- STATUS -->
+      <section class="fscr" id="fs-status">
+        <div class="ph"><h2 class="pt">Transaction Status</h2><p class="ps">GET · Real-time payment status by unique reference or UTR number</p></div>
+        <div class="split" id="tg-status"></div>
+      </section>
+
+      <!-- ACVAL -->
+      <section class="fscr" id="fs-acval">
+        <div class="ph"><h2 class="pt">Account Validation</h2><p class="ps">POST · Verify beneficiary account holder name before any transfer — penny-drop or name-match</p></div>
+        <div class="split" id="tg-acval"></div>
+      </section>
+
+      <!-- VPA -->
+      <section class="fscr" id="fs-vpa">
+        <div class="ph"><h2 class="pt">Fetch VPA</h2><p class="ps">POST · Resolve and validate a UPI Virtual Payment Address before transfer</p></div>
+        <div class="split" id="tg-vpa"></div>
+      </section>
+
+      <!-- BENEF -->
+      <section class="fscr" id="fs-benef">
+        <div class="ph"><h2 class="pt">Beneficiary Management</h2><p class="ps">POST · Register and manage beneficiaries for recurring transfers</p></div>
+        <div class="split" id="tg-benef"></div>
+      </section>
+
+      <!-- HISTORY -->
+      <section class="fscr" id="fs-history">
+        <div class="hist-hdr">
+          <div><h2 class="pt">Request History</h2><p class="ps">All API calls this session</p></div>
+          <button class="btn-clr" onclick="clearHist()"><i class="ti ti-trash" style="font-size:12px"></i> Clear</button>
+        </div>
+        <div id="hist-list"></div>
+      </section>
+
+    </main>
+  </div>
+</div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>

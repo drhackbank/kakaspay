@@ -1,0 +1,9 @@
+{
+  "name": "kakaspay",
+  "version": "1.0.0",
+  "description": "kakaspay — ICICI Bank Corporate Payment Portal (IMPS/NEFT/RTGS)",
+  "private": true,
+  "scripts": {
+    "start": "npx serve . -p 3000"
+  }
+}
